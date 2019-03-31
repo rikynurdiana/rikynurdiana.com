@@ -1,0 +1,30 @@
+User-Agent: *
+Disallow: /
+
+User-agent: Twitterbot
+Disallow:
+
+User-Agent: Googlebot
+Allow: /
+Disallow: /auth
+Disallow: /article
+Disallow: /dashboard
+Disallow: /system
+Disallow: /vendor
+Disallow: /application/
+Disallow: /application/cache
+Disallow: /application/config
+Disallow: /application/controller
+Disallow: /application/core
+Disallow: /application/helpers
+Disallow: /application/hooks
+Disallow: /application/language
+Disallow: /application/liblaries
+Disallow: /application/logs
+Disallow: /application/migrations
+Disallow: /application/model
+Disallow: /application/sql
+Disallow: /application/third_party
+Disallow: /application/views
+
+Sitemap: http://rikynurdiana.com/sitemap.xml

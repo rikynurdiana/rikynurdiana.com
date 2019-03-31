@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <title>Rikynurdiana.com - Tutorial Codeigniter 3 Advance</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="tutorial codeigniter 3">
+    <meta name="author" content="riky nurdiana">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@riky_nurdiana">
+    <meta name="twitter:creator" content="@riky_nurdiana">
+    <meta name="twitter:title" content="Tutorial Codeigniter 3 Advance">
+    <meta name="twitter:description" content="ion auth image upload and image manipulation">
+    <meta name="twitter:image" content="http://rikynurdiana.com/uploads/images/CodeIgniter.png">
+
+    <meta property="og:url" content="http://rikynurdiana.com/tutorial/tutorial-codeigniter-advance.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="tutorial codeigniter 3 Advance" />
+    <meta property="og:description" content="ion auth image upload and image manipulation" />
+    <meta property="og:image" content="http://rikynurdiana.com/uploads/images/CodeIgniter.png" />
+    <meta property="og:site_name" content="http://rikynurdiana.com" />
+    <meta property="fb:app_id" content="187586878342246" />
+    <meta property="article:author" content="riky nurdiana"/>
+
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://rikynurdiana.com">
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/css/hover-min.css">
+    <link rel="stylesheet" href="assets/css/pace.min.css">
+    <link rel="stylesheet" href="assets/plugins/lightbox/dist/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" id="theme-style">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body class="body-pink">
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84576557-1', 'auto');
+ga('send', 'pageview');
+ga('set', 'userId', 84576557); // Set the user ID using signed-in user_id.
+</script>
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TW3GZD');
+</script>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW3GZD" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '187586878342246',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom" style="margin-bottom: 0px;">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="hvr-wobble-horizontal navbar-brand" href="/">rikynurdiana.com</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="hvr-underline-from-center" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a class="hvr-underline-from-center" href="/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a class="hvr-underline-from-center" href="/tutorial">Tutorial</a>
+                    </li>
+                    <li>
+                        <a class="hvr-underline-from-center" href="/imagecloud">Image Cloud</a>
+                    </li>
+                    <li>
+                        <a class="hvr-underline-from-center" href="/about">About</a>
+                    </li>
+                    <li>
+                        <a class="hvr-underline-from-center" href="/resume">Resume</a>
+                    </li>
+                    <li>
+                        <a class="hvr-underline-from-center" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="/tutorial">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">tutorial</span><span class="text-bold"> from scratch</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li><a href="/tutorial">Home</a></li>
+                    <li class="active">Codeigniter 3 Advance</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><img src="/uploads/images/CodeIgniter.png" alt="codeigniter" width="40px"> Tutorial Codeigniter 3 Advance</h1>
+                    <div class="meta"> ion auth , image upload and image manipulation</div>
+                </div><!--//doc-header-->
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+
+                            <!-- section download -->
+                            <section id="download-section" class="doc-section">
+
+                                <h2 class="section-title">Download</h2>
+
+                                <div class="section-block">
+                                    <p>Pada tutorial ini saya akan membuat fungsi ACL (Access Controll List) atau bisa disebut dengan Authentication. Baik itu digunakan untuk login maupun untuk privilage perhalaman yang akan diberikan super admin. Lalu saya akan membuat fungsi upload gambar atau file ke server dan nanti kita buat galeri foto. Setelah itu saya lanjutkan dengan tutorial manipulasi database. Tapi sebelum itu semua mari kita belajar tentang general template atau yang biasa saya sebut dengan code yang selalu dipakai di setiap halaman, seperti assets dan navigasi.
+                                    Di tutorial ini kita menggunakan source code dari simple biodata crud yang ada di tutorial sebelum nya. Tapi jika kamu malas mengikuti tutorial sebelum nya, berikut adalah source code yang bisa kamu pakai untuk tutorial ini. Langsung aja di download di link dibawah ini.
+                                    </p>
+                                    <a href="https://github.com/rikynurdiana/crud-biodata/archive/master.zip" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download Codeigniter 3 Simple CRUD</a>
+                                    <a href="https://github.com/rikynurdiana/crud-biodata/blob/master/application/sql/codeigniter.sql" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download Database Codeigniter 3 Simple CRUD</a>
+                                </div>
+
+                            </section>
+
+                            <!-- section installation -->
+                            <section id="templating" class="doc-section">
+
+                                <h2 class="section-title">Templating</h2>
+
+                                <p>Templating disini adalah membuat sebuah view yang berisi code code yang akan di pakai di semua halaman, seperti assets dan navigasi. Kedua view tersebut akan selalu di gunakan di semua halaman, maka dari itu kita buat tempate nya agar nanti mudah digunakan.</p>
+
+                                    <p>Jika sudah selesai mendownload source code nya. pindahkan ke folder project kamu dan ubah namanya seperti dibawah ini.</p>
+
+                                    <pre><code class="language-markup">crud-biodata-master => codeigniter-advance</code></pre>
+
+                                    <p>Berhubung ini project baru, jadi diharapkan kamu setting webservernya masing masing yah.</p>
+
+                                    <p>Kalau sudah selesai dengan setting webservernya, selanjutnya kita buat sebuah folder</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> template</code></pre>
+
+                                    <p>Setelah membuat folder langkah selanjut nya kita buat file template nya. Yang pertama kita buat file untuk template assets header</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> template -> assets-header.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>assets-header.php</h6>
+<pre><code class="language-markup">&lt;meta charset="utf-8"&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;meta name="description" content="tutorial codeigniter 3"&gt;
+&lt;meta name="author" content="riky nurdiana"&gt;
+&lt;title&gt;Tutorial Cdoeigniter 3 Advance&lt;/title&gt;
+&lt;!-- Bootstrap Core CSS --&gt;
+&lt;link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;!-- MetisMenu CSS --&gt;
+&lt;link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet"&gt;
+&lt;!-- DataTables CSS --&gt;
+&lt;link href="/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet"&gt;
+&lt;!-- DataTables Responsive CSS --&gt;
+&lt;link href="/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet"&gt;
+&lt;!-- Custom CSS --&gt;
+&lt;link href="/dist/css/sb-admin-2.css" rel="stylesheet"&gt;
+&lt;!-- Custom Fonts --&gt;
+&lt;link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"&gt;
+&lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;
+&lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// --&gt;
+&lt;!--[if lt IE 9]&gt;
+&lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"&gt;&lt;/script&gt;
+&lt;script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Selanjutnya kita buat template assets untuk footer</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> template -> assets-footer.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>assets-footer.php</h6>
+<pre><code class="language-php">&lt;!-- jQuery --&gt;
+&lt;script src="/vendor/jquery/jquery.min.js"&gt;&lt;/script&gt;
+&lt;!-- Bootstrap Core JavaScript --&gt;
+&lt;script src="/vendor/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;!-- Metis Menu Plugin JavaScript --&gt;
+&lt;script src="/vendor/metisMenu/metisMenu.min.js"&gt;&lt;/script&gt;
+&lt;!-- DataTables JavaScript --&gt;
+&lt;script src="/vendor/datatables/js/jquery.dataTables.min.js"&gt;&lt;/script&gt;
+&lt;script src="/vendor/datatables-plugins/dataTables.bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script src="/vendor/datatables-responsive/dataTables.responsive.js"&gt;&lt;/script&gt;
+&lt;!-- Custom Theme JavaScript --&gt;
+&lt;script src="/dist/js/sb-admin-2.js"&gt;&lt;/script&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Setelah kita buat template untuk assets, selanjut nya kita buat template untuk navigasi. Yang pertama kita buat navigasi untuk menu</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> template -> nav-menu.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>nav-menu.php</h6>
+<pre><code class="language-php">&lt;nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0"&gt;
+    &lt;div class="navbar-header"&gt;
+        &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"&gt;
+            &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;a class="navbar-brand" href="/dashboard"&gt;Tutorial Codeigniter 3&lt;/a&gt;
+    &lt;/div&gt;
+
+        &lt;?php $this-&gt;load-&gt;view('template/nav-right') ?&gt;
+
+    &lt;div class="navbar-default sidebar" role="navigation"&gt;
+        &lt;div class="sidebar-nav navbar-collapse"&gt;
+            &lt;ul class="nav" id="side-menu"&gt;
+                &lt;li&gt;
+                    &lt;a href="/dashboard"&gt;&lt;i class="fa fa-dashboard fa-fw"&gt;&lt;/i&gt; Dashboard&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="/auth"&gt;&lt;i class="fa fa-dashboard fa-fw"&gt;&lt;/i&gt; Authentication&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="/biodata"&gt;&lt;i class="fa fa-dashboard fa-fw"&gt;&lt;/i&gt; Biodata&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Dan yang terakhir kita buat template untuk navigasi yang ada di atas halaman. Kita beri nama nav-right </p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> template -> nav-right.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>nav-right.php</h6>
+<pre><code class="language-php">&lt;ul class="nav navbar-top-links navbar-right"&gt;
+    &lt;li class="dropdown"&gt;
+        &lt;a class="dropdown-toggle" data-toggle="dropdown" href="#"&gt;
+            &lt;i class="fa fa-user fa-fw"&gt;&lt;/i&gt; &lt;i class="fa fa-caret-down"&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        &lt;ul class="dropdown-menu dropdown-user"&gt;
+            &lt;li&gt;
+                &lt;a href="#" class="text-center"&gt; Welcome &lt;?= $this-&gt;session-&gt;userdata('first_name'); ?&gt;&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="divider"&gt;&lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href="#"&gt;&lt;i class="fa fa-user fa-fw"&gt;&lt;/i&gt; User Profile&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href="#"&gt;&lt;i class="fa fa-gear fa-fw"&gt;&lt;/i&gt; Settings&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="divider"&gt;&lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href="/auth/logout"&gt;&lt;i class="fa fa-sign-out fa-fw"&gt;&lt;/i&gt; Logout&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Nah setelah membuat view template nya, selanjutnya adalah mengubah view di semua halaman. untuk mempercepat pembelajaran langsung saja copy paste dari source code yang sudah di ubah.</p><br>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-templating/blob/master/application/views/biodata/index.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download index.php</a><br>
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> biodata -> index.php</code></pre><br>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-templating/blob/master/application/views/biodata/create.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download create.php</a><br>
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> biodata -> create.php</code></pre><br>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-templating/blob/master/application/views/biodata/edit.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download edit.php</a><br>
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> biodata -> edit.php</code></pre><br>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-templating/blob/master/application/views/biodata/read.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download read.php</a><br>
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> biodata -> read.php</code></pre><br>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-templating/blob/master/application/views/dashboard/index.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download index.php</a><br>
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> dashboard -> index.php</code></pre><br>
+
+                                    <p>Setelah selesai di copy paste, kita buka browser dan kita lihat hasil nya dan semua berjalan normal. Dan ada satu menu baru yang muncul yaitu Authenticate. Jangan bingung dulu karena itu nanti akan kita buat fungsi nya.</p>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/dashboard-index.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/dashboard-index.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/dashboard-index.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/biodata-index.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/biodata-index.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/biodata-index.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <p>Sedikit penjelasan mengapa kita menggunakan templating adalah karena kita akan bekerja dengan code code yang sama di setiap halamannya. Bayangkan jika kita harus selalu menuliskan semua assets yang kita butuhkan disetiap halamannya akan memakan waktu yang lama. Nah untuk mempersingkat nya kita gunakan sistem templating. Sekarang coba kamu buka salah satu view yang sudah di copy paste, kita bua file index.php milik biodata</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> biodata -> index.php</code></pre>
+
+                                    <p>Kita lihat di line ke 6</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>index.php</h6>
+<pre><code class="language-php"><p>&lt;?php $this-&gt;load-&gt;view('template/assets-header') ?&gt;</p>
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Nah ini lah yang kita buat menjadi template. Jadi semua assets yang digunakan disetiap halaman kita simpan di file template assets lalu kita panggil menggunakan script diatas. Tidak hanya assets saja yang bisa dijadikan template, salah satu yang lain nya adalah navigasi. kita sekarang lihat line ke 14 di file index.php milik biodata.</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>index.php</h6>
+<pre><code class="language-php"><p>&lt;?php $this-&gt;load-&gt;view('template/nav-menu') ?&gt;</p>
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Nah jika script ini ditempatkan disemua halaman maka disetiap halaman akan muncul navigasi menu nya. Jadi kesimpulannya sistem templating itu memudahkan untuk kita dalam menggunakan ulang code code yang selalu ada di setiap halaman. Oke kalo kamu bingung karna error typo atau bingung gimana cara ngoding nya, download aja nih source code nya</p>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-templating/archive/master.zip" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download Codeigniter 3 tahap templating</a>
+                            </section>
+
+                            <section id="authentication" class="doc-section">
+
+                                <h2 class="section-title">Authentication</h2>
+
+                                <div class="section-block">
+                                    <p>Untuk sistem autentikasi disini saya menggunakan ION AUTH. Kenapa saya menggunakan ion auth? jawabannya karena ion auth selalu di maintenance dan contributornya pun ratusan. Jadi package ini selalu up to date. Oke langsung aja ke cara penggunaanya. Untuk menggunakan ion auth, kita harus mendownload nya terlebih dahulu di link berikut
+                                    </p>
+                                    <a href="https://github.com/benedmunds/CodeIgniter-Ion-Auth/archive/2.zip" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download ION AUTH</a>
+                                </div>
+
+                                <p>Setelah mendownload package ion auth, kita cukup pindahkan file file yang sudah di download kedalam project kita. Untuk mudahnya mari kita praktekan</p>
+
+                                <p>Copy kan file</p>
+
+                                <pre><code class="language-markup">CodeIgniter-Ion-Auth-2 -> config -> ion_auth.php</code></pre>
+
+                                <p>Lalu paste kan ke</p>
+
+                                <pre><code class="language-markup">codeigniter-advance -> application -> config -> ion_auth.php</code></pre>
+
+                                <p>Lakukan juga hal yang sama untuk file file dibawah ini</p>
+
+                                <pre><code class="language-markup">CodeIgniter-Ion-Auth-2 -> controllers -> Auth.php</code></pre>
+                                <pre><code class="language-markup">codeigniter-advance -> application -> controllers -> Auth.php</code></pre>
+                                <hr>
+
+                                <pre><code class="language-markup">CodeIgniter-Ion-Auth-2 -> language</code></pre>
+                                <pre><code class="language-markup">codeigniter-advance -> application -> language</code></pre>
+                                <hr>
+
+                                <pre><code class="language-markup">CodeIgniter-Ion-Auth-2 -> libraries -> Bcrypt.php</code></pre>
+                                <pre><code class="language-markup">codeigniter-advance -> application -> libraries -> Bcrypt.php</code></pre>
+                                <hr>
+
+                                <pre><code class="language-markup">CodeIgniter-Ion-Auth-2 -> libraries -> Ion_auth.php</code></pre>
+                                <pre><code class="language-markup">codeigniter-advance -> application -> libraries -> Ion_auth.php</code></pre>
+                                <hr>
+
+                                <pre><code class="language-markup">CodeIgniter-Ion-Auth-2 -> models -> Ion_auth_model.php</code></pre>
+                                <pre><code class="language-markup">codeigniter-advance -> application -> models -> Ion_auth_model.php</code></pre>
+                                <hr>
+
+                                <pre><code class="language-markup">CodeIgniter-Ion-Auth-2 -> models -> Ion_auth_model.php</code></pre>
+                                <pre><code class="language-markup">codeigniter-advance -> application -> models -> Ion_auth_model.php</code></pre>
+                                <hr>
+
+                                <p>Nah husus untuk view nya karena default ion_auth itu tanpa style, maka supaya style nya sama dengan project kita, kamu download aja semua file yang ada di link ini lalu simpan di folder views. Silahkan download dulu views nya</p>
+
+                                <a href="https://github.com/rikynurdiana/view-auth/archive/master.zip" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download custom auth view</a><br><br>
+
+                                <p>Setelah di download, kita buat foler auth</p>
+
+                                <pre><code class="language-markup">codeigniter-advance -> application -> views -> auth </code></pre>
+
+                                <p>Pindahkan semua isi dalam folder auth yang sudah kita download tadi kedalam folder auth yang barusan kita buat</p>
+
+                                <div class="col-md-6 col-sm-12 col-sm-12">
+                                    <div class="screenshot-holder">
+                                        <a href="/tutorial/assets/images/tutorial2/auth-folder.png" data-title="index page" data-toggle="lightbox">
+                                            <img class="img-responsive" src="/tutorial/assets/images/tutorial2/auth-folder.png" alt="screenshot" /></a>
+                                        <a class="mask" href="/tutorial/assets/images/tutorial2/auth-folder.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <p>Oke lumayan sulit juga yah proses nya. Tapi gak apa-apa namanya juga belajar. Nah setelah proses diatas dilalui, sekarang kita masuk ke setting ION AUTH.</p>
+
+                                <div id="tahap1"  class="section-block">
+                                    <h3 class="block-title">Tahap 1 (autoload.php)</h3>
+
+                                    <p>Mari kita setting kebutuhan autoload untuk ion auth. Pertama buka dulu file nya</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> config -> autoload.php</code></pre>
+
+                                    <p>Silahkan tambahkan atau replace dengan code berikut. Tapi ingat yang di replace itu hanya code yang tertera dibawah ini. Selain itu biarkan saja default</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>autoload.php</h6>
+<pre><code class="language-php">$autoload['libraries'] = array('form_validation','session','database', 'ion_auth');
+$autoload['helper'] = array('url','html','form', 'language', 'cookie');
+$autoload['language'] = array('auth');
+$autoload['model'] = array('UsersModel');
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tahap2"  class="section-block">
+                                    <h3 class="block-title">Tahap 2 (ion_auth.php)</h3>
+
+                                    <p>Selanjutnya buka file config ion_auth nya. Pertama buka dulu file nya</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> config -> ion_auth.php</code></pre>
+
+                                    <p>Silahkan tambahkan atau replace dengan code berikut. Tapi ingat yang di replace itu hanya code yang tertera dibawah ini. Selain itu biarkan saja default</p>
+
+                                    <p>Ubah line ke 92 dari FALSE menjadi TRUE</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>ion_auth.php</h6>
+<pre><code class="language-php">$config['email_activation'] = TRUE;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Code diatas berfungsi agar setiap user yang registrasi mendapatkan email aktivasi sebelum bisa login</p>
+
+                                    <p>Ubah line ke 125 dari FALSE menjadi TRUE</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>ion_auth.php</h6>
+<pre><code class="language-php">$config['use_ci_email'] = TRUE;
+$config['email_config'] = 'file';
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Code diatas memungkinkan codeigniter menggunakan fasilitas mengirim email nya.</p>
+                                </div>
+
+                                <div id="tahap3"  class="section-block">
+                                    <h3 class="block-title">Tahap 3 (email.php)</h3>
+
+                                    <p>Selanjutnya buat file email.php dalam folder config</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> config -> email.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>email.php</h6>
+<pre><code class="language-php">&lt;?php
+$config = Array(
+    'protocol'  =&gt; 'smtp',
+    'smtp_host' =&gt; 'ssl://smtp.googlemail.com',
+    'smtp_port' =&gt; 465,
+    'smtp_user' =&gt; '#####@gmail.com', // masukan email gmail anda
+    'smtp_pass' =&gt; '#####', // masukan password gmail anda
+    'mailtype'  =&gt; 'html',
+    'charset'   =&gt; 'iso-8859-1',
+    'wordwrap'  =&gt; TRUE,
+    'newline'   =&gt; "\r\n"
+);
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tahap4"  class="section-block">
+                                    <h3 class="block-title">Tahap 4 (usersModel.php)</h3>
+
+                                    <p>Disini ada sedikit configurasi sedikit agar nanti kita bisa mendapatkan username ketika login. Langsung saja kita buat file model nya</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> models -> userModel.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>userModel.php</h6>
+<pre><code class="language-php"><p>&lt;?php
+defined('BASEPATH') OR exit('No direct script access allowed');</p>
+
+class UsersModel extends CI_Model
+{
+    public function getUsername($email)
+    {
+        $this-&gt;db-&gt;select('first_name');
+        $this-&gt;db-&gt;where('email', $email);
+        $query = $this-&gt;db-&gt;get('users');
+        return $query-&gt;row();
+    }
+}
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="tahap5"  class="section-block">
+                                    <h3 class="block-title">Tahap 5 (controllers)</h3>
+
+                                    <p>Tahap ini yang agak sulit karena merombak banyak code. Untuk itu lebih baik kita copy paste saja code nya supaya menghindari typo dalam penulisan code.</p>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-templating/blob/master/application/controllers/Auth.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download Auth controller</a>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-templating/blob/master/application/controllers/BiodataController.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download Biodata controller</a>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-templating/blob/master/application/controllers/DashboardController.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download Dashboard controller</a>
+
+                                    <p>Timpa atau replace file dengan hasil download diatas</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance-> application -> controllers -> Auth.php</code></pre>
+                                    <pre><code class="language-markup">codeigniter-advance-> application -> controllers -> BiodataController.php</code></pre>
+                                    <pre><code class="language-markup">codeigniter-advance-> application -> controllers -> DashboardController.php</code></pre>
+                                </div>
+
+                                <div id="tahap6"  class="section-block">
+                                    <h3 class="block-title">Tahap 6 (SQL)</h3>
+
+                                    <p>Disini kita eksekusi SQL file untuk membuat table table ion auth.</p>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-templating/blob/master/application/sql/ion_auth.sql" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download ION AUTH SQL</a>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/create-sql.png" data-title="create sql" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/create-sql.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/create-sql.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/result-sql.png" data-title="result sql" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/result-sql.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/result-sql.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                </div>
+
+                                <div id="tahap7"  class="section-block">
+                                    <h3 class="block-title">Tahap 7 (Tes Drive)</h3>
+
+                                    <p>Oke akhir nya sampai juga ke tahap percobaan dari hasil codingan copas kita yang diatas. Langsung aja buka browsernya</p>
+
+                                    <pre><code class="language-markup">http://codeigniter.dev</code></pre>
+
+                                    <pre><code class="language-markup">email : admin@admin.com</code></pre>
+                                    <pre><code class="language-markup">password : password</code></pre>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/login-page.png" data-title="Login" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/login-page.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/login-page.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/auth-page.png" data-title="Login" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/auth-page.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/auth-page.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <p>Selanjutnya kita uji coba membuat user baru. Tapi sebelumnya proses membuat user itu ada beberapa urutan. Urutan nya sebagai berikut</p>
+                                    <p>1 . Super Admin Create User</p>
+                                    <p>2 . Calon user menerima email aktivasi</p>
+                                    <p>3 . Calon user mengaktifkan akun via email activation</p>
+                                    <p>4 . Setelah aktif, user baru bisa login dan menjadi member.</p>
+                                    <p>5 . Untuk dapat melihat halaman yang ada, ubah gruop user menjadi admin</p>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/create-user.png" data-title="Login" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/create-user.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/create-user.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/inactive-user.png" data-title="Login" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/inactive-user.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/inactive-user.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/activate-email.png" data-title="Login" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/activate-email.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/activate-email.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/active-user.png" data-title="Login" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/active-user.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/active-user.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <p>Oke supaya ketika login ada sambutan, kita ubah routes kita. Pertama buka file routes.php nya dulu</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> config -> routes.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>BiodataModel.php</h6>
+<pre><code class="language-php">$route['default_controller'] = 'dashboardcontroller/index';
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Ubah default controller nya ke dashboard yah supaya pas pertama login kita masuk ke dashboard dengan sambutan</p>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/new-login.png" data-title="Login" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/new-login.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/new-login.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/new-dashboard.png" data-title="Login" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/new-dashboard.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/new-dashboard.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <p>Jika kamu menemukan error atau mungkin membuat error dengan typo silahkan debug sendiri atau jika malas bisa langsung download source code nya. Berikut source code tutorial codeigniter advance sampai tahap ion auth</p>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-authentication/archive/master.zip" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download Codeigniter 3 advance hingga tahap authentication</a>
+                                    <a href="https://github.com/rikynurdiana/tutorial-authentication/blob/master/application/sql/codeigniter.sql" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download database tahap authentication</a>
+                                </div>
+                            </section>
+
+                            <section id="image-upload" class="doc-section">
+
+                                <h2 class="section-title">Image Upload</h2>
+
+                                <div class="section-block">
+                                    <p>Oke akhir nya sudah terlewati juga tahap yang sulit diatas. Mohon maaf kalau penjelasannya kurang detail mengenai ION AUTH. Saya sengaja supaya kamu membaca sendiri code code nya, jangan disuapin terus hehehe.. Intinya sih mengerti tahapan tahapan yang harus di kerjakannya, karna kalo source code nya itu bisa dibaca sendiri sampe ngerti. Saya yakin kamu pasti bisa karna kamu lebih jago dari pada saya.
+                                    </p>
+                                    <p>Nah selanjutnya kita masuk ke bagian Image Upload. Yaitu bagian dimana kita bisa upload image ke server melalui form dan tersimpan kedalam database kita. Nah langkah awal yang harus dilakukan adalah menambah field baru dalam table t_biodata</p>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/tambah-kolom-foto.png" data-title="database" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/tambah-kolom-foto.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/tambah-kolom-foto.png" data-title="database" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div><br>
+
+                                    <p>Setelah menambah kolom baru selanjutnya kita membuat fungsi upload pada form biodata. Langkah pertama kita rombak file BiodataController.php</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> controllers -> BiodataController.php</code></pre>
+
+                                    <p>kita akan menambah kan fungsi upload yang terdiri</p>
+
+                                </div>
+
+                                <div id="create"  class="section-block">
+                                    <h3 class="block-title">Create</h3>
+
+                                    <p>Pada fungsi create kita rombak code nya menjadi</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>BiodataController.php</h6>
+<pre><code class="language-php">public function create()
+{
+    if (!$this-&gt;ion_auth-&gt;logged_in()) {
+        redirect('auth/login', 'refresh');
+    } else {
+        $this-&gt;form_validation-&gt;set_rules('nama', 'Nama', 'required');
+        $this-&gt;form_validation-&gt;set_rules('umur', 'Umur', 'required');
+        if (empty($_FILES['userfile']['name'])) {
+            $this-&gt;form_validation-&gt;set_rules('userfile', 'Foto', 'required');
+        }
+
+        if ($this-&gt;form_validation-&gt;run() == FALSE) {
+            $data = array(
+                'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                'create_at' =&gt; date("Y-m-d h:i:sa"),
+                'update_at' =&gt; date("Y-m-d h:i:sa"),
+            );
+
+            $this-&gt;load-&gt;view('biodata/create', $data);
+        } else {
+            $user_upload_path = 'uploads/foto/';
+            $config['upload_path'] = './' . $user_upload_path;
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['encrypt_name'] = TRUE;
+
+            $this-&gt;load-&gt;library('upload', $config);
+
+            if ( ! $this-&gt;upload-&gt;do_upload()) {
+                $data = array(
+                    'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                    'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                    'create_at' =&gt; date("Y-m-d h:i:sa"),
+                    'update_at' =&gt; date("Y-m-d h:i:sa")
+                );
+
+                $this-&gt;load-&gt;view('biodata/create', $data);
+            } else {
+                $data_upload = $this-&gt;upload-&gt;data();
+                $file_name = $data_upload["file_name"];
+
+                $data = array(
+                    'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                    'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                    'foto' =&gt; $file_name,
+                    'create_at' =&gt; date("Y-m-d h:i:sa"),
+                    'update_at' =&gt; date("Y-m-d h:i:sa"),
+                );
+
+                $this-&gt;BiodataModel-&gt;create($data);
+                $this-&gt;session-&gt;set_flashdata('add_success','Biodata berhasil dibuat');
+                redirect('/biodata');
+            }
+        }
+    }
+}
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="update"  class="section-block">
+                                    <h3 class="block-title">Update</h3>
+
+                                    <p>Selanjutnya kita juga akan merombak code yang ada di fungsi update menjadi seperti di bawah ini</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>BiodataController.php</h6>
+<pre><code class="language-php">public function update()
+{
+    if (!$this-&gt;ion_auth-&gt;logged_in()) {
+        redirect('auth/login', 'refresh');
+    } else {
+        $this-&gt;form_validation-&gt;set_rules('nama', 'Nama', 'required');
+        $this-&gt;form_validation-&gt;set_rules('umur', 'Umur', 'required');
+
+        if ($this-&gt;form_validation-&gt;run() == FALSE) {
+            $data = array(
+                'id' =&gt; $this-&gt;input-&gt;post('id'),
+                'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                'create_at' =&gt; date("Y-m-d h:i:sa"),
+                'update_at' =&gt; date("Y-m-d h:i:sa"),
+            );
+
+            $this-&gt;load-&gt;view('biodata/edit', $data);
+        } else {
+            $user_upload_path = 'uploads/foto/';
+            $config['upload_path'] = './' . $user_upload_path;
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['encrypt_name'] = TRUE;
+
+            $this-&gt;load-&gt;library('upload', $config);
+
+            if ($_FILES['userfile']['name']) {
+                if ($this-&gt;upload-&gt;do_upload()) {
+                    $image = $this-&gt;BiodataModel-&gt;read($this-&gt;input-&gt;post('id'))-&gt;row();
+                    if (empty($image-&gt;foto)) {
+                        // do not nothing or continue to next prosses
+                    } else {
+                        unlink('uploads/foto/'. $image-&gt;foto);
+                    }
+
+                    $data_upload = $this-&gt;upload-&gt;data();
+                    $file_name = $data_upload["file_name"];
+
+                    $data = array(
+                        'id' =&gt; $this-&gt;input-&gt;post('id'),
+                        'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                        'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                        'foto' =&gt; $file_name,
+                        'create_at' =&gt; date("Y-m-d h:i:sa"),
+                        'update_at' =&gt; date("Y-m-d h:i:sa"),
+                    );
+
+                    $this-&gt;BiodataModel-&gt;update($id = $data['id'],$data);
+                    $this-&gt;session-&gt;set_flashdata('edit_success','Biodata berhasil diupdate');
+                    redirect('/biodata');
+                } else {
+                    return false;
+                }
+            } else {
+                $data = array(
+                    'id' =&gt; $this-&gt;input-&gt;post('id'),
+                    'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                    'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                    'create_at' =&gt; date("Y-m-d h:i:sa"),
+                    'update_at' =&gt; date("Y-m-d h:i:sa"),
+                );
+
+                $this-&gt;BiodataModel-&gt;update($id = $data['id'],$data);
+                $this-&gt;session-&gt;set_flashdata('edit_success','Biodata berhasil diupdate');
+                redirect('/biodata');
+            }
+        }
+    }
+}
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="delete"  class="section-block">
+                                    <h3 class="block-title">Delete</h3>
+
+                                    <p>Dan terakhir kita rombak juga fungsi delete nya menjadi seperti dibawah ini</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>BiodataController.php</h6>
+<pre><code class="language-php">public function delete($id)
+{
+    if (!$this-&gt;ion_auth-&gt;logged_in()) {
+        redirect('auth/login', 'refresh');
+    } else {
+        $image = $this-&gt;BiodataModel-&gt;read($id)-&gt;row();
+
+        if (empty($image-&gt;foto)) {
+            // do not nothing or continue to next prosses
+        } else {
+            unlink('uploads/foto/'. $image-&gt;foto);
+        }
+
+        $this-&gt;BiodataModel-&gt;delete($id);
+        $this-&gt;session-&gt;set_flashdata('delete_success','Biodata terpilih berhasil di hapus');
+        redirect('/biodata');
+    }
+}
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="penjelasan"  class="section-block">
+                                    <h3 class="block-title">Penjelasan</h3>
+
+                                    <p>Penjelasan tentag kode diatas sebetulnya sederhana. Kita hanya menambahkan fungsi upload file seperti ini</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+<pre><code class="language-php">//menambah validasi untuk input file,
+if (empty($_FILES['userfile']['name'])) {
+    $this-&gt;form_validation-&gt;set_rules('userfile', 'Foto', 'required');
+}
+
+//menentukan upload path
+$user_upload_path = 'uploads/foto/';
+//menyimpan path upload
+$config['upload_path'] = './' . $user_upload_path;
+//mengizinkan type file tertentu
+$config['allowed_types'] = 'gif|jpg|png|jpeg';
+//encrypt file name setelah upload
+$config['encrypt_name'] = TRUE;
+
+//memanggil library upload
+$this-&gt;load-&gt;library('upload', $config);
+
+//melakukan proses upload file
+//jika tidak mengupload file maka ini yang terjadi
+if ( ! $this-&gt;upload-&gt;do_upload()) {
+    $data = array(
+        'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+        'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+        'create_at' =&gt; date("Y-m-d h:i:sa"),
+        'update_at' =&gt; date("Y-m-d h:i:sa")
+    );
+
+    $this-&gt;load-&gt;view('biodata/create', $data);
+//jika mengupload file maka ini yang terjadi
+} else {
+    //memanggil fungsi detail file yang di upload
+    $data_upload = $this-&gt;upload-&gt;data();
+    //mengambil nama file yang di upload
+    $file_name = $data_upload["file_name"];
+
+    //lalu menyimpan nya dalam array
+    $data = array(
+        'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+        'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+        'foto' =&gt; $file_name,
+        'create_at' =&gt; date("Y-m-d h:i:sa"),
+        'update_at' =&gt; date("Y-m-d h:i:sa"),
+    );
+
+    //simpan ke database
+    $this-&gt;BiodataModel-&gt;create($data);
+    //berikan pesan berhasil
+    $this-&gt;session-&gt;set_flashdata('add_success','Biodata berhasil dibuat');
+    //kembali ke list biodata
+    redirect('/biodata');
+}
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="view"  class="section-block">
+                                    <h3 class="block-title">View</h3>
+
+                                    <p>Agar upload image terlihat menarik maka kita tambahkan file style dan js 'fileinput'. oke pertama download dulu file file nya lalu simpan ke project kita</p>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-codeigniter/blob/master/fileinput.min.css" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download fileinput.min.css</a>
+
+                                    <p>simpan di folder berikut</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> dist -> css -> fileinput.min.css</code></pre><br><br>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-codeigniter/blob/master/fileinput.min.js" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download fileinput.min.js</a>
+
+                                    <p>simpan di folder berikut</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> dist -> js -> fileinput.min.js</code></pre><br><br>
+
+                                    <p>selanjutnya kita tambahkan kedalam template assets-header.php</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> template -> assets-header.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>assets-header.php</h6>
+<pre><code class="language-php">&lt;link href="/dist/css/fileinput.min.css" rel="stylesheet"&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>dan kita tambahkan juga kedalam template assets-footer.php</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> template -> assets-footer.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>assets-foter.php</h6>
+<pre><code class="language-php">&lt;script src="/dist/js/fileinput.min.js"&gt;&lt;/script&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Lalu jangan lupa kita tambahkan juga script baru kedalam view nya. Pertama kita buka view index nya dulu</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> biodata -> index.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>index.php</h6>
+<pre><code class="language-php">//kita tambahkan ini di thead nya
+&lt;th class="text-center"&gt;FOTO&lt;/th&gt;
+
+//dan ini juga pada tbody nya
+&lt;?php if ($d-&gt;foto == ''): ?&gt;
+    &lt;td&gt;
+        &lt;img src="/uploads/noimage.jpg" alt="no image" width="80px"&gt;
+    &lt;/td&gt;
+&lt;?php else: ?&gt;
+    &lt;td&gt;
+        &lt;img src="/uploads/foto/&lt;?= $d-&gt;foto; ?&gt;" alt="&lt;?= $d-&gt;nama; ?&gt;" width="80px"&gt;
+    &lt;/td&gt;
+&lt;?php endif ?&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Jika merasa bingung silahkan copy paste saja source code ini</p>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-image-upload/blob/master/application/views/biodata/index.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download index.php</a><br><br>
+
+                                    <p>setelah itu kita ubah file create.php nya</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> biodata -> create.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>create.php</h6>
+<pre><code class="language-php">&lt;form role="form" action="/create" method="post" enctype="multipart/form-data" /&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label&gt;Nama&lt;/label&gt;
+        &lt;input id="nama" type="text" name="nama" class="form-control" value="&lt;?php echo $nama; ?&gt;"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label&gt;Umur&lt;/label&gt;
+        &lt;input id="umur" type="number" name="umur" class="form-control" value="&lt;?php echo $umur; ?&gt;"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="control-label"&gt;Upload Foto&lt;/label&gt;
+        &lt;input id="input-1" type="file" class="file" name="userfile"&gt;
+    &lt;/div&gt;
+    &lt;hr&gt;
+    &lt;button type="submit" class="btn btn-success"&gt;Simpan&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Jika merasa bingung silahkan copy paste saja source code ini</p>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-image-upload/blob/master/application/views/biodata/create.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download create.php</a><br><br>
+
+                                    <p>selanjutnya ke file edit.php</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> biodata -> edit.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>edit.php</h6>
+<pre><code class="language-php">&lt;form role="form" action="/update" method="post" enctype="multipart/form-data" /&gt;
+    &lt;div class="form-group hidden"&gt;
+        &lt;label&gt;ID&lt;/label&gt;
+        &lt;input id="id" type="number" name="id" class="form-control" value="&lt;?php echo $id; ?&gt;"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label&gt;Nama&lt;/label&gt;
+        &lt;input id="nama" type="text" name="nama" class="form-control" value="&lt;?php echo $nama; ?&gt;"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label&gt;Umur&lt;/label&gt;
+        &lt;input id="umur" type="number" name="umur" class="form-control" value="&lt;?php echo $umur; ?&gt;"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="control-label"&gt;Foto Eksisting&lt;/label&gt;&lt;br&gt;
+        &lt;?php if (empty($foto)): ?&gt;
+            &lt;img src="/uploads/noimage.jpg" alt="foto" width="100%"&gt;
+        &lt;?php else: ?&gt;
+            &lt;img src="/uploads/foto/&lt;?= $foto; ?&gt;" alt="foto" width="100%"&gt;
+        &lt;?php endif ?&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="control-label"&gt;Ubah Foto&lt;/label&gt;
+        &lt;input id="input-1" type="file" class="file" name="userfile"&gt;
+    &lt;/div&gt;
+    &lt;hr&gt;
+    &lt;button type="submit" class="btn btn-success"&gt;Simpan&lt;/button&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+    &lt;a href="/biodata" type="button" class="btn btn-warning"&gt;Kembali&lt;/a&gt;
+&lt;/form&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Jika merasa bingung silahkan copy paste saja source code ini</p>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-image-upload/blob/master/application/views/biodata/edit.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download edit.php</a><br><br>
+
+                                    <p>terakhir kita ubah file read.php</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> application -> views -> biodata -> read.php</code></pre>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>read.php</h6>
+<pre><code class="language-php">&lt;?php if ($data-&gt;foto == ''): ?&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Foto&lt;/td&gt;
+        &lt;td&gt;&lt;img src="/uploads/noimage.jpg" alt="no image" width="250px"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;?php else: ?&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Foto&lt;/td&gt;
+        &lt;td&gt;&lt;img src="/uploads/foto/&lt;?= $data-&gt;foto; ?&gt;" alt="&lt;?= $data-&gt;nama; ?&gt;" width="250px"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;?php endif ?&gt;
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Jika merasa bingung silahkan copy paste saja source code ini</p>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-image-upload/blob/master/application/views/biodata/read.php" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download edit.php</a><br><br>
+
+                                    <p>Terakhir kamu buat folder uploads/foto</p>
+
+                                    <pre><code class="language-markup">codeigniter-advance -> uploads -> foto</code></pre>
+
+                                    <p>lalu kamu ubah folder permission nya menjadi 777 agar bisa menyimpan file hasil upload</p><br><br>
+
+                                    <p>Nah sekarang silahkan coba kamu mulai upload file dengan menggunakan form biodata</p>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/index-1.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/index-1.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/index-1.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/upload-data.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/upload-data.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/upload-data.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/upload-data.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/upload-data.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/upload-data.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/sukses-upload.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/sukses-upload.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/sukses-upload.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/edit-upload.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/edit-upload.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/edit-upload.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/read-upload.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/read-upload.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/read-upload.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <p>Cek folder project kamu. Image yang tadi di upload sudah masuk ke server. Dan itu tandanya proses upload image ini berhasil.</p>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/upload-folder.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/upload-folder.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/upload-folder.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <p>Oke proses upload file sudah selesai sampai sini jika kamu mendapatkan error karna typo atau binggung cara nge debug nya gimana. Jangan ambil pusing, download aja source code ini. Dan kalo kamu ngerasa gak bisa ngikutin tutorial ini karna bingung apa yang harus di lakukan, jangan bersedih. Baca aja source code yang bisa kamu download, disitu kamu baca codingan yang saya buat. Saya yakin kamu pasti bisa membaca source code nya karna sangat mudah, asalkan kamu mengerti dasar pemrograman php. Ingat jangan terus menerus mau disuapin, harus berani untuk cari tau sendiri dari mana coding itu berasal dan bagaimana fungsi nya.</p>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-image-upload/archive/master.zip" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download Codeigniter 3 advance sampai tahap image upload</a>
+
+                                    <a href="https://github.com/rikynurdiana/tutorial-image-upload/blob/master/application/sql/codeigniter.sql" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download database nya</a>
+
+                                </div>
+
+                            </section>
+
+
+                            <section id="image-manipulation" class="doc-section">
+
+                                <h2 class="section-title">Image Manipulation</h2>
+
+                                <div class="section-block">
+                                    <p>Ini adalah tutorial tingkat lanjutan dari imgage upload. Image manipulation adalah dimana kita membutuhkan manipulasi pada gambar yang sudah di upload. Contohnya seperti ini, jika kita upload gambar berukuran 1000px ke server lalu di tampilkan sebagai gambar thumbnail, maka itu sangat berat dan membuang buang bandwidth dan memori. Maka dari itu untuk menyiasati nya kita gunakan image manipulation. Jadi yang kita upload 1000px lalu di proses oleh image manipulation dan di resize menjadi 50px nah hasil dari resize itu yang kita tampilkan sebagai thumbnail nya. Mantap kan? bisa hemat memori dan hemat bandwidth juga mempercepat load halaman. Sebetulnya image manipulation itu ada fungsi resize, crop, rotate dan watermark, tapi disini saya akan membuat fungsi resize dan watermark saja karena fungsi crop dan rotate tidak akan terpakai maka dari itu daripada kita buat code yang tidak terpakai lebih baik kita buat code code yang bermanfaat saja. Oke daripada panjang lebar bercerita, langsung saja kita eksekusi. Pertama kita tambah sebuah field baru table t_biodata.
+                                    </p>
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/update-table.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/update-table.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/update-table.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div id="resize"  class="section-block">
+                                    <h3 class="block-title">Resize</h3>
+                                    <p>Oke di bagian resize ini kita akan membuat sebuah gambar ketika di upload akan menghasilkan gambar baru berukuran berbeda. Pertama kita buka dulu file BiodataController.php nya karna kita akan menambahkan fungsi resize kedalam nya</p>
+                                    <pre><code class="language-markup">codeigniter-3.1.3 -> application -> controllers -> BiodataController.php</code></pre>
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>BiodataController.php</h6>
+<pre><code class="language-php">$this-&gt;load-&gt;library('image_lib');
+$resize['image_library'] = 'gd2';
+$resize['source_image'] = $user_upload_path . $file_name;
+$resize['create_thumb'] = TRUE;
+$resize['maintain_ratio'] = TRUE;
+$resize['master_dim'] = 'auto';
+$resize['quality'] = "100%";
+$resize['width'] = 500;
+$resize['height'] = 500;
+$this-&gt;image_lib-&gt;initialize($resize);
+$this-&gt;image_lib-&gt;resize();
+$thumb_name = $data_upload['raw_name'] . '_thumb' . $data_upload['file_ext'];
+</code></pre>
+                                        </div>
+                                    </div>
+                                    <p>kita tambah kan code diatas kedalam fungsi create kita.</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>BiodataController.php</h6>
+<pre><code class="language-php">public function create()
+{
+    if (!$this-&gt;ion_auth-&gt;logged_in()) {
+        redirect('auth/login', 'refresh');
+    } else {
+        $this-&gt;form_validation-&gt;set_rules('nama', 'Nama', 'required');
+        $this-&gt;form_validation-&gt;set_rules('umur', 'Umur', 'required');
+        if (empty($_FILES['userfile']['name'])) {
+            $this-&gt;form_validation-&gt;set_rules('userfile', 'Foto', 'required');
+        }
+
+        if ($this-&gt;form_validation-&gt;run() == FALSE) {
+            $data = array(
+                'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                'create_at' =&gt; date("Y-m-d h:i:sa"),
+                'update_at' =&gt; date("Y-m-d h:i:sa"),
+            );
+
+            $this-&gt;load-&gt;view('biodata/create', $data);
+        } else {
+            $user_upload_path = 'uploads/foto/';
+            $config['upload_path'] = './' . $user_upload_path;
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['encrypt_name'] = TRUE;
+
+            $this-&gt;load-&gt;library('upload', $config);
+
+            if ( ! $this-&gt;upload-&gt;do_upload()) {
+                $data = array(
+                    'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                    'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                    'foto' =&gt; $this-&gt;input-&gt;post('userfile'),
+                    'create_at' =&gt; date("Y-m-d h:i:sa"),
+                    'update_at' =&gt; date("Y-m-d h:i:sa")
+                );
+
+                $this-&gt;load-&gt;view('biodata/create', $data);
+            } else {
+                $data_upload = $this-&gt;upload-&gt;data();
+                $file_name = $data_upload["file_name"];
+
+                //fungsi untuk membuat thumbnail
+                $this-&gt;load-&gt;library('image_lib');
+                $resize['image_library'] = 'gd2';
+                $resize['source_image'] = $user_upload_path . $file_name;
+                $resize['create_thumb'] = TRUE;
+                $resize['maintain_ratio'] = TRUE;
+                $resize['master_dim'] = 'auto';
+                $resize['quality'] = "100%";
+                $resize['width'] = 500;
+                $resize['height'] = 500;
+                $this-&gt;image_lib-&gt;initialize($resize);
+                $this-&gt;image_lib-&gt;resize();
+                $thumb_name = $data_upload['raw_name'] . '_thumb' . $data_upload['file_ext'];
+
+                $data = array(
+                    'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                    'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                    'foto' =&gt; $file_name,
+                    'thumb' =&gt; $thumb_name,
+                    'create_at' =&gt; date("Y-m-d h:i:sa"),
+                    'update_at' =&gt; date("Y-m-d h:i:sa"),
+                );
+
+                $this-&gt;BiodataModel-&gt;create($data);
+                $this-&gt;session-&gt;set_flashdata('add_success','Biodata berhasil dibuat');
+                redirect('/biodata');
+            }
+        }
+    }
+}
+</code></pre>
+                                        </div>
+                                    </div>
+                                    <p>Oke sekarang kita coba upload data baru. apakah di database dan di server file nya ada.</p>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/manipulation1.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/manipulation1.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/manipulation1.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/manipulation2.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/manipulation2.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/manipulation2.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/manipulation3.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/manipulation3.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/manipulation3.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/manipulation4.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/manipulation4.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/manipulation4.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <p>Hohoho... Berhasil membuat thumbnail dari hasil upload file kita. Nah selanjutnya kita buat fungsi watermark pada image.</p>
+                                </div>
+
+
+                                <div id="watermark"  class="section-block">
+                                    <h3 class="block-title">Watermark</h3>
+                                    <p>Selanjutnya kita masuk ke bagian watermark. Disini kita akan membuat fungsi watermark nya sesuai kebutuhan saja, jika kita ada conten yang memerlukan watermark seperti artikel maka fungsi watermark ini akan berguna. Fungsi ini akan kita tambahkan di fungsi create biodata setelah fungsi resize image. Oke langsung kita rombak </p>
+                                    <pre><code class="language-markup">codeigniter-3.1.3 -> application -> controllers -> BiodataController.php</code></pre>
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>BiodataController.php</h6>
+<pre><code class="language-php">// fungsi watermark
+$watermark['source_image'] = $user_upload_path . $thumb_name;
+$watermark['wm_text'] = 'Copyright 2017 - Riky Nurdiana';
+$watermark['wm_type'] = 'text';
+$watermark['wm_font_path'] = './system/fonts/texb.ttf';
+$watermark['wm_font_size'] = '18';
+$watermark['wm_font_color'] = 'ffffff';
+$watermark['wm_vrt_alignment'] = 'bottom';
+$watermark['wm_hor_alignment'] = 'center';
+$watermark['new_image'] = $data_upload['raw_name'] . '_wm' . $data_upload['file_ext'];
+$this-&gt;image_lib-&gt;initialize($watermark);
+$this-&gt;image_lib-&gt;watermark();
+$watermark_name = $data_upload['raw_name'] . '_wm_thumb' . $data_upload["file_ext"];
+</code></pre>
+                                        </div>
+                                    </div>
+                                    <p>kita tambah kan code diatas kedalam fungsi create kita.</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>BiodataController.php</h6>
+<pre><code class="language-php">public function create()
+{
+    if (!$this-&gt;ion_auth-&gt;logged_in()) {
+        redirect('auth/login', 'refresh');
+    } else {
+        $this-&gt;form_validation-&gt;set_rules('nama', 'Nama', 'required');
+        $this-&gt;form_validation-&gt;set_rules('umur', 'Umur', 'required');
+        if (empty($_FILES['userfile']['name'])) {
+            $this-&gt;form_validation-&gt;set_rules('userfile', 'Foto', 'required');
+        }
+
+        if ($this-&gt;form_validation-&gt;run() == FALSE) {
+            $data = array(
+                'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                'create_at' =&gt; date("Y-m-d h:i:sa"),
+                'update_at' =&gt; date("Y-m-d h:i:sa"),
+            );
+
+            $this-&gt;load-&gt;view('biodata/create', $data);
+        } else {
+            $user_upload_path = 'uploads/foto/';
+            $config['upload_path'] = './' . $user_upload_path;
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['encrypt_name'] = TRUE;
+
+            $this-&gt;load-&gt;library('upload', $config);
+
+            if ( ! $this-&gt;upload-&gt;do_upload()) {
+                $data = array(
+                    'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                    'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                    'create_at' =&gt; date("Y-m-d h:i:sa"),
+                    'update_at' =&gt; date("Y-m-d h:i:sa")
+                );
+
+                $this-&gt;load-&gt;view('biodata/create', $data);
+            } else {
+                $data_upload = $this-&gt;upload-&gt;data();
+                $file_name = $data_upload["file_name"];
+
+                //fungsi untuk membuat thumbnail / resize image
+                $this-&gt;load-&gt;library('image_lib');
+                $resize['image_library'] = 'gd2';
+                $resize['source_image'] = $user_upload_path . $file_name;
+                $resize['create_thumb'] = TRUE;
+                $resize['maintain_ratio'] = TRUE;
+                $resize['master_dim'] = 'auto';
+                $resize['quality'] = "100%";
+                $resize['width'] = 500;
+                $resize['height'] = 500;
+                $this-&gt;image_lib-&gt;initialize($resize);
+                $this-&gt;image_lib-&gt;resize();
+                $thumb_name = $data_upload['raw_name'].'_thumb' . $data_upload['file_ext'];
+
+                // fungsi watermark
+                $watermark['source_image'] = $user_upload_path . $thumb_name;
+                $watermark['wm_text'] = 'Copyright 2017 - Riky Nurdiana';
+                $watermark['wm_type'] = 'text';
+                $watermark['wm_font_path'] = './system/fonts/texb.ttf';
+                $watermark['wm_font_size'] = '18';
+                $watermark['wm_font_color'] = 'ffffff';
+                $watermark['wm_vrt_alignment'] = 'bottom';
+                $watermark['wm_hor_alignment'] = 'center';
+                $watermark['new_image'] = $data_upload['raw_name'].'_wm' . $data_upload['file_ext'];
+                $this-&gt;image_lib-&gt;initialize($watermark);
+                $this-&gt;image_lib-&gt;watermark();
+                $watermark_name = $data_upload['raw_name'] . '_wm_thumb' . $data_upload["file_ext"];
+
+                $data = array(
+                    'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                    'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                    'foto' =&gt; $file_name,
+                    'thumb' =&gt; $thumb_name,
+                    'watermark' =&gt; $watermark_name,
+                    'create_at' =&gt; date("Y-m-d h:i:sa"),
+                    'update_at' =&gt; date("Y-m-d h:i:sa"),
+                );
+
+                $this-&gt;BiodataModel-&gt;create($data);
+                $this-&gt;session-&gt;set_flashdata('add_success','Biodata berhasil dibuat');
+                redirect('/biodata');
+            }
+        }
+    }
+}
+</code></pre>
+                                        </div>
+                                    </div>
+                                    <p>Selanjutnya kita coba upload data baru. apakah di database dan di server file nya ada.</p>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/watermark1.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/watermark1.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/watermark1.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/watermark2.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/watermark2.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/watermark2.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/watermark3.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/watermark3.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/watermark3.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/watermark4.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/watermark4.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/watermark4.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/watermark5.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/watermark5.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/watermark5.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <p>Yuhu kita berhasil membuat image berwatermark. Nah jadi kesimpulannya ketika kita upload image di form input biodata, maka gambar yang kita upload akan di proses menjadi 3 gambar yaitu gambar original, gambar resize / thumbnail dan gambar hasil resize berwatermark. Keren bukan? hehehe ini berguna jika kita membuar artikel, jadi ketika orang mau mengambil gambar dari artikel kita maka gambar yang berwatermark yang akan mereka ambil.</p>
+
+                                    <p>Diatas baru fungsi create nya saja. selanjutnya kita akan membuat fungsi update dan delete nya. Agak susah dan ribet tapi mari kita buat saja. Langsung kita rombak file BiodataController.php fungsi update nya</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>BiodataController.php</h6>
+<pre><code class="language-php">public function update()
+{
+    if (!$this-&gt;ion_auth-&gt;logged_in()) {
+        redirect('auth/login', 'refresh');
+    } else {
+        $this-&gt;form_validation-&gt;set_rules('nama', 'Nama', 'required');
+        $this-&gt;form_validation-&gt;set_rules('umur', 'Umur', 'required');
+
+        if ($this-&gt;form_validation-&gt;run() == FALSE) {
+            $data = array(
+                'id' =&gt; $this-&gt;input-&gt;post('id'),
+                'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                'create_at' =&gt; date("Y-m-d h:i:sa"),
+                'update_at' =&gt; date("Y-m-d h:i:sa"),
+            );
+
+            $this-&gt;load-&gt;view('biodata/edit', $data);
+        } else {
+            $user_upload_path = 'uploads/foto/';
+            $config['upload_path'] = './' . $user_upload_path;
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['encrypt_name'] = TRUE;
+
+            $this-&gt;load-&gt;library('upload', $config);
+
+            if ($_FILES['userfile']['name']) {
+                if ($this-&gt;upload-&gt;do_upload()) {
+                    $image = $this-&gt;BiodataModel-&gt;read($this-&gt;input-&gt;post('id'))-&gt;row();
+                    if (empty($image-&gt;foto)) {
+                        // do not nothing or continue to next prosses
+                    } else {
+                        unlink('uploads/foto/'. $image-&gt;foto);
+                        unlink('uploads/foto/'. $image-&gt;thumb);
+                        unlink('uploads/foto/'. $image-&gt;watermark);
+                    }
+
+                    $data_upload = $this-&gt;upload-&gt;data();
+                    $file_name = $data_upload["file_name"];
+
+                    //fungsi untuk membuat thumbnail / resize image
+                    $this-&gt;load-&gt;library('image_lib');
+                    $resize['image_library'] = 'gd2';
+                    $resize['source_image'] = $user_upload_path . $file_name;
+                    $resize['create_thumb'] = TRUE;
+                    $resize['maintain_ratio'] = TRUE;
+                    $resize['master_dim'] = 'auto';
+                    $resize['quality'] = "100%";
+                    $resize['width'] = 500;
+                    $resize['height'] = 500;
+                    $this-&gt;image_lib-&gt;initialize($resize);
+                    $this-&gt;image_lib-&gt;resize();
+                    $thumb_name = $data_upload['raw_name'].'_thumb' . $data_upload['file_ext'];
+
+                    // fungsi watermark
+                    $watermark['source_image'] = $user_upload_path . $thumb_name;
+                    $watermark['wm_text'] = 'Copyright 2017 - Riky Nurdiana';
+                    $watermark['wm_type'] = 'text';
+                    $watermark['wm_font_path'] = './system/fonts/texb.ttf';
+                    $watermark['wm_font_size'] = '18';
+                    $watermark['wm_font_color'] = 'ffffff';
+                    $watermark['wm_vrt_alignment'] = 'bottom';
+                    $watermark['wm_hor_alignment'] = 'center';
+                    $watermark['new_image'] = $data_upload['raw_name'].'_wm' . $data_upload['file_ext'];
+                    $this-&gt;image_lib-&gt;initialize($watermark);
+                    $this-&gt;image_lib-&gt;watermark();
+                    $watermark_name = $data_upload['raw_name'] . '_wm_thumb' . $data_upload["file_ext"];
+
+                    $data = array(
+                        'id' =&gt; $this-&gt;input-&gt;post('id'),
+                        'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                        'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                        'foto' =&gt; $file_name,
+                        'thumb' =&gt; $thumb_name,
+                        'watermark' =&gt; $watermark_name,
+                        'create_at' =&gt; date("Y-m-d h:i:sa"),
+                        'update_at' =&gt; date("Y-m-d h:i:sa"),
+                    );
+
+                    $this-&gt;BiodataModel-&gt;update($id = $data['id'],$data);
+                    $this-&gt;session-&gt;set_flashdata('edit_success','Biodata berhasil diupdate');
+                    redirect('/biodata');
+                } else {
+                    return false;
+                }
+            } else {
+                $data = array(
+                    'id' =&gt; $this-&gt;input-&gt;post('id'),
+                    'nama' =&gt; $this-&gt;input-&gt;post('nama'),
+                    'umur' =&gt; $this-&gt;input-&gt;post('umur'),
+                    'create_at' =&gt; date("Y-m-d h:i:sa"),
+                    'update_at' =&gt; date("Y-m-d h:i:sa"),
+                );
+
+                $this-&gt;BiodataModel-&gt;update($id = $data['id'],$data);
+                $this-&gt;session-&gt;set_flashdata('edit_success','Biodata berhasil diupdate');
+                redirect('/biodata');
+            }
+        }
+    }
+}
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Nah setelah fungsi update kita buat selanjutnya kita uji coba hasilnya di browser</p>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/update1.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/update1.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/update1.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/update2.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/update2.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/update2.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/update3.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/update3.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/update3.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-sm-12">
+                                        <div class="screenshot-holder">
+                                            <a href="/tutorial/assets/images/tutorial2/update4.png" data-title="index page" data-toggle="lightbox">
+                                                <img class="img-responsive" src="/tutorial/assets/images/tutorial2/update4.png" alt="screenshot" /></a>
+                                            <a class="mask" href="/tutorial/assets/images/tutorial2/update4.png" data-title="index page" data-toggle="lightbox"><i class="icon fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <p>Oke mantap kan!! di database kita sudah terupdate dengan data yang baru lalu di file server kita, image yang di replace menghilang di timpa image baru yang di upload. Sungguh efisien sekali hehehe... Oke deh selanjutnya adalah delete. Gampang ini sih langsung aja yuk</p>
+
+                                    <div id="php" class="section-block">
+                                        <div class="code-block">
+                                            <h6>BiodataController.php</h6>
+<pre><code class="language-php">public function delete($id)
+{
+    if (!$this-&gt;ion_auth-&gt;logged_in()) {
+        redirect('auth/login', 'refresh');
+    } else {
+        $image = $this-&gt;BiodataModel-&gt;read($id)-&gt;row();
+
+        if (empty($image-&gt;foto)) {
+            // do not nothing or continue to next prosses
+        } else {
+            unlink('uploads/foto/'. $image-&gt;foto);
+            unlink('uploads/foto/'. $image-&gt;thumb);
+            unlink('uploads/foto/'. $image-&gt;watermark);
+        }
+
+        $this-&gt;BiodataModel-&gt;delete($id);
+        $this-&gt;session-&gt;set_flashdata('delete_success','Biodata terpilih berhasil di hapus');
+        redirect('/biodata');
+    }
+}
+</code></pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Oke tes aja sendiri pasti record di databse menghilang dan file di server pun lenyap. Nah Sejauh ini mantap kan tutorial image manipulation nya. Kamu bisa memanipulasi gambar sesuka hati dan sesuai kebutuhan. Kedepannya bisa kita kembangkan dengan kombinasi awan alias cloud. Kita bisa simpan file gambar kita ke server cloud, tapi itu nanti saja karena saat ini belum ada budget duat sewa server cloud nya hehehe...</p>
+
+                                    <p>Untuk kawan kawan yang tidak mengikuti dengan baik tutorial diatas, seperti biasa saya akan kasih source code dan database nya supaya gak ada typo atau error. Oke sip langsung aja download nih source code nya</p>
+
+                                    <a href="https://github.com/rikynurdiana/codeigniter-advance/archive/master.zip" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download Full tutorial codeigniter advance</a>
+                                    <a href="https://github.com/rikynurdiana/codeigniter-advance/blob/master/application/sql/codeigniter.sql" class="btn btn-primary" target="_blank"><i class="fa fa-download"></i> Download database nya</a><br><br>
+
+                                    <div class="clearfix"></div>
+
+                                    <p>Kesimpulan dari tutorial codeigniter 3 advance ini adalah membuat kamu mengerti tentang apa itu ACL (Access Controll List) dan bagaimana cara memanipulasi gambar. Nah sampai sini berarti kamu sudah bisa mengatur hak admin di setiap halamannya. Lalu kamu juga sudah mengerti cara membuat thumbnail dari sebuah gambar.</p>
+
+                                    <p>Akhirnya sampai juga di penghujung tutorial advance ini. Mohon maaf jika kurang puas atau tutorial nya jelek. Maklum namanya juga baru permulaan membuat tutorial. Tapi yang penting tujuannya baik yaitu berbagi ilmu kepada orang orang yang baru belajar pemrograman php menggunakan framework codeigniter 3. Mudah mudahan tutorial ini bisa sedikitnya membantu. Saya yakin kalian lebih jago dan hebat dari saya dalam coding jadi jangan malu malu untuk berbagi ilmu nya. Kalo nemu error atau pengen bertanya silahkan langsung isi kolom komentar di bawah.</p>
+                                </div>
+
+                            </section>
+
+
+
+                             <section>
+                                <div id="disqus_thread"></div>
+                                    <script>
+
+                                    /**
+                                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                                    /*
+                                    var disqus_config = function () {
+                                    this.page.url = http://rikynurdiana.com;  // Replace PAGE_URL with your page's canonical URL variable
+                                    this.page.identifier = http://rikynurdiana.com; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                    };
+                                    */
+                                    (function() { // DON'T EDIT BELOW THIS LINE
+                                    var d = document, s = d.createElement('script');
+                                    s.src = '//rikynurdiana-com.disqus.com/embed.js';
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                    })();
+                                    </script>
+                                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                                    <script id="dsq-count-scr" src="//rikynurdiana-com.disqus.com/count.js" async></script>
+                            </section>
+                        </div>
+                    </div>
+
+
+                    <div class="doc-sidebar hidden-xs">
+                        <nav id="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+                                <li><a class="scrollto" href="#download-section">Download</a></li>
+                                <li>
+                                    <a class="scrollto" href="#templating">Templating</a>
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#authentication">Authentication</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#tahap1">Tahap 1</a></li>
+                                        <li><a class="scrollto" href="#tahap2">Tahap 2</a></li>
+                                        <li><a class="scrollto" href="#tahap3">Tahap 3</a></li>
+                                        <li><a class="scrollto" href="#tahap4">Tahap 4</a></li>
+                                        <li><a class="scrollto" href="#tahap5">Tahap 5</a></li>
+                                        <li><a class="scrollto" href="#tahap6">Tahap 6</a></li>
+                                        <li><a class="scrollto" href="#tahap7">Tahap 7</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#image-upload">Image Upload</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#create">Create</a></li>
+                                        <li><a class="scrollto" href="#update">Update</a></li>
+                                        <li><a class="scrollto" href="#delete">Delete</a></li>
+                                        <li><a class="scrollto" href="#penjelasan">Penjelasan</a></li>
+                                        <li><a class="scrollto" href="#view">View</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#image-manipulation">Image Manipulation</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#resize">Resize</a></li>
+                                        <li><a class="scrollto" href="#watermark">Watermark</a></li>
+                                    </ul>
+                                </li>
+                            </ul><!--//doc-menu-->
+                        </nav>
+                    </div><!--//doc-sidebar-->
+
+                </div><!--//doc-body-->
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+
+        <div id="promo-block" class="promo-block">
+            <div class="container">
+                <div class="promo-block-inner">
+                    <!-- <h3 class="promo-title text-center"><i class="fa fa-heart"></i> <a href="https://wrapbootstrap.com/theme/appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank">AppKit - Bootstrap Angular Admin Theme for Developers</a></h3>
+                    <div class="row">
+                        <div class="figure-holder col-md-5 col-sm-6 col-xs-12">
+                            <div class="figure-holder-inner">
+                                <a href="https://wrapbootstrap.com/theme/appkit-admin-theme-angularjs-WB051SCJ1?ref=3wm" target="_blank"><img class="img-responsive" src="assets/images/demo/appkit-widgets-thumb.jpg" alt="AppKit Theme" /></a>
+                                <a class="mask" href="#hook"><i class="icon fa fa-heart pink"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="content-holder col-md-7 col-sm-6 col-xs-12">
+                            <div class="content-holder-inner">
+                                <div class="desc">
+                                    <h4 class="content-title"><strong>Love this free documentation theme?</strong></h4>
+                                    <p>Check out AppKit - an Angular admin theme I created with my developer friend <a href="https://twitter.com/tnajdek">Tom Najdek</a> for developers. AppKit uses modern front-end technologies and is packed with useful components and widgets to speed up your app development.</p>
+                                    <p><strong class="highlight">[Tip for developers]:</strong> If your project is Open Source, you can use this area to promote your other projects or hold third party adverts like Bootstrap and FontAwesome do!</p>
+                                </div>
+                                <div class="author"><a href="http://themes.3rdwavemedia.com">Xiaoying Riley</a></div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://rikynurdiana/" targe="_blank">Riky Nurdiana</a> for developers</small>
+
+        </div><!--//container-->
+    </footer><!--//footer-->
+
+
+    <!-- Main Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+</html>
+
